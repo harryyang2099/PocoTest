@@ -12,18 +12,16 @@ Steps to bulid it:
   2. cd PocoTest
   3. conan profile detect --force
   4. conan install . --output-folder=build --build=missing -s compiler.cppstd=17 -r conancenter
-     //This would install all depends
+     //install all depends
   5. Move all files from build\build\generators to build
   6. cd build
   7. cmake .. -DCMAKE_TOOLCHAIN_FILE="conan_toolchain.cmake"
-     //This would generate project files such as xxx.sln
+     //generate such as xxx.sln
   8. cmake --build . --config Release
 
 Steps when you did something change:
   1. git status //See what changed
   2. git add . 
   3. git commit -m "message about the change. such as added or changed xxxx."
-  4. git push  //Push the change to the remote. So, it save permantely. For my test project only
-               //If a public project owned by many devs, it needs to create a temp brance, and only change in temp brance, 
-               //then send a pull request to merge to main branch
+  4. git push  //Push the change to the remote. Only for small test project
   5. Open github, make sure your chagne is here.
